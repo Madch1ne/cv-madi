@@ -39,6 +39,53 @@ a:hover {
   color: var(--accent-bright);
 }
 
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(210mm, 100%);
+  margin: 0 auto 0.8rem;
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.language-switcher > span {
+  margin-right: 0.25rem;
+  color: var(--muted);
+}
+
+.language-switcher a,
+.print-action {
+  min-width: 2.2rem;
+  padding: 0.42rem 0.68rem;
+  border: 1px solid #bcccdc;
+  border-radius: 0.45rem;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.9);
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+.language-switcher a:hover,
+.print-action:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.language-switcher a[aria-current="page"] {
+  border-color: var(--accent);
+  color: #ffffff;
+  background: var(--accent);
+}
+
 p,
 h1,
 h2,
@@ -354,6 +401,18 @@ h1 span {
   font-size: 0.68rem;
 }
 
+.cv--en .section + .section {
+  margin-top: 1.2rem;
+}
+
+.cv--en .entry + .entry {
+  margin-top: 0.8rem;
+}
+
+.cv--en .timeline-item {
+  padding-block: 0.4rem;
+}
+
 sup {
   font-size: 0.65em;
 }
@@ -387,6 +446,12 @@ kbd {
     width: 100%;
     min-height: auto;
     box-shadow: none;
+  }
+
+  .toolbar {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0;
+    background: var(--sidebar);
   }
 
   .hero {
@@ -451,6 +516,10 @@ kbd {
   }
 
   .print-note {
+    display: none;
+  }
+
+  .toolbar {
     display: none;
   }
 
